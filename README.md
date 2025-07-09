@@ -1,14 +1,14 @@
 # PeriodicFolderSaver
-Console Application to periodically save (as zip) provided folder or file to provided location.
-Used mostly for Games without option for multiple saves per profile (DarkSouls, NFS, GTA, CMS etc.), but not limited to games.
+Console application to periodically save (as ZIP) a specified folder or file to a target location.
+Originally designed for games that don’t support multiple save profiles (e.g., Dark Souls, NFS, GTA, CMS), but not limited to gaming use.
 
-You can provide path to any folder, which content you want to periodically being save.
-For example to automatically backup text files (of any kind), if your edit tool or environment does not provide version control functionality.
+You can use it to back up any folder whose contents you want to periodically save.
+For example, it can automatically archive text files, project folders, or other data that your editing tool or environment doesn't version automatically.
 
-As bonus it can run related to saved files application after initial files backup in one click (if set as command in shortcut).
+Optionally, the program can run an application (e.g., the game or editor) right after performing the initial backup – ideal for launching via a shortcut with one click.
 
 Usage:
-(paths to folders/files better provide in double quotes (“))
+It's recommended to wrap paths in double quotes (") to avoid issues with spaces or special characters.
 
 Linux:
 ```console
