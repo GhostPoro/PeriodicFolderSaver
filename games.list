@@ -1,0 +1,95 @@
+# this file supports comments - everything after '#' will be ignored
+
+# boolean values can be set for 'TRUE' as
+# everything which starts from T,t,y,Y letters (example True, Yes, yes, yea, TRUE)
+# everything >0
+# otherwise values treated as FALSE
+
+# all numeric values treated as seconds, with minimum value 1, where 0 will be treated as 'disabled'
+# if not said explicitly otherwise
+
+[Atomic Heart]
+
+# path to executable to run (befgore or after initial save), which changing files in current profile (updating then by overriding)
+# Cautious! Daemon does not check is file exist (just tries to run via provided path)
+# (optional: if not provided - app runnig stage will be skipped)
+target_app_run_cmd = "D:\XboxGames\Atomic Heart - Windows\Content\gamelaunchhelper.exe"
+
+# path to source folder/file (from where files will be saved)
+# Warning! This option is Required to be properly set!
+source_saves_folder_path = C:\Users\JohnDoe\AppData\Local\Packages\FocusHomeInteractiveSA.579645D26CFD_4hny5m903y3g0\SystemAppData
+
+# path to folder where will be stored archive files vith saved files from 'source_saves_folder_path' option
+# Warning! This option is Required to be properly set!
+backup_saves_folder_path = D:\Games_Saves_Backups\AtomicHeart
+
+# There functionality to restore last save from Your backups (for example if multiple people play the same game - to provide multiple saves for the same game)
+# this option says how long to wait before firs time override files in SOURCE folder (ur Game) after this daemon start
+# (optional) min: 0 (0 or lower == disabled) max: 2147483647 default: 5
+pause_before_restore_attempt_sec = 0
+
+# enable/disable restore functionality before assigned application start
+# (optional) values: true or false, default: false
+restore_at_start = false
+
+# enable/disable backuping SOURCE files befeore restoring from last backup (will be saved as 'UR_FILES_NAME_source_data_backup.zip')
+# (optional) values: true or false, default: true
+backup_before_restore = false
+
+# time before initial restore. if game synchronizing with cloud, can override ur saves with cloud,
+# this option will pause initial restore, to wait, for example when game enter man screen, to override saves
+# to not interfere with cloud saves synchronization at game start (again, if more than 1 person play on same machine)
+# (optional) min: 0 (0 or lower == disabled) max: 2147483647 default: 120
+restore_period_sec = 70
+
+# pause between 'failed' restore attempts, if files being read and cannot be overridden in current moment
+# (optional) min: 1 (can be disabled with 'restore_at_start' set to FALSE) max: 2147483647 default: 5
+timeout_between_restore_attempts_sec = 1
+
+# time range in what if (any of) files can not be read, if for example files being modified
+# (game saving state right now) and cannot be backedup in current moment
+# file backuping attempt will be treated as 'FAILED'
+# (optional) min: 1 (cant be disabled :D) max: 2147483647 default: 5
+read_file_timeout_sec = 10
+
+# maximum attempts to try save files (again) in current saving session (not seconds, just number)
+# if previous attempt 'FAILED'
+# (optional) min: 0 (do not try again on error) max: 2147483647 default: 10
+read_file_max_attempts = 10
+
+# pause (in seconds) between files backups (during related application work)
+# (optional) min: 1 (cant be disabled too) max: 2147483647 default: 600 (10 minutes)
+pause_between_backup_saves_sec = 300
+
+# names of archive files, where save daemon will store files
+# (optional) if not set - daemon will (try to) generate name for files from profile name (whats provided inside [ ] on top of this parameters)
+preferred_files_names = atomic_heart_saves
+
+[CODE VEIN]
+target_app_run_cmd = steam://rungameid/678960
+source_saves_folder_path = C:\Users\JohnDoe\AppData\Local\CodeVein
+backup_saves_folder_path = D:\Games_Saves_Backups\CodeVein
+pause_before_restore_attempt_sec = 0
+restore_at_start = false
+backup_before_restore = false
+restore_period_sec = 70
+timeout_between_restore_attempts_sec = 1
+read_file_timeout_sec = 10
+read_file_max_attempts = 10
+pause_between_backup_saves_sec = 300
+preferred_files_names = CodeVein_save
+
+[CODE VEIN LINUX]
+target_app_run_cmd = steam://rungameid/678960
+ # source_saves_folder_path = /opt/steamlibs/steamapps/compatdata/678960/pfx/drive_c/users/steamuser/AppData/Local/CodeVein
+source_saves_folder_path = /opt/games/Steam/steamlibs/steamapps/compatdata/678960/pfx/drive_c/users/steamuser/AppData/Local/CodeVein
+backup_saves_folder_path = /mnt/storage_d/Games_Saves_Backups/CodeVein
+pause_before_restore_attempt_sec = 0
+restore_at_start = false
+backup_before_restore = false
+restore_period_sec = 70
+timeout_between_restore_attempts_sec = 1
+read_file_timeout_sec = 10
+read_file_max_attempts = 10
+pause_between_backup_saves_sec = 300
+preferred_files_names = CodeVein_save
