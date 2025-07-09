@@ -29,3 +29,10 @@ Full options can be seen with help option (or in Main.java):
 ```console
 java -jar "./saver.jar" -h
 ```
+
+Daemon support runtime instructions:
+```console
+'exit' or 'quit' - stops program execution
+'save'           - manual initiation of 'standard' files archiving
+'help'           - print this help (for runtime commands)
+```
